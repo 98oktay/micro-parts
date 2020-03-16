@@ -6,6 +6,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="/main.css" />
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 <body>
@@ -16,13 +17,13 @@
         <div class="box filter placeholder">Filter Placeholder</div>
         <div class="box content placeholder">Loading...</div>
         <div class="box footer">Footer</div>
-        
+
         <part file="bannerContent.html" hideClass=".banner.placeholder"/>
-        <part file="headerContent.html" hideClass=".header.placeholder"/>   
-        <part file="searchContent.html" hideClass=".search.placeholder"/>   
-        <part file="contentContent.html" hideClass=".content.placeholder"/>   
-        <part file="filterContent.html" hideClass=".filter.placeholder"/>   
-        <part file="menuContent.html" hideClass=".menu.placeholder"/>   
+        <part gateway="localhost:8082" fragment="header" hideClass=".header.placeholder"/>
+        <part file="searchContent.html" hideClass=".search.placeholder"/>
+        <part file="contentContent.html" hideClass=".content.placeholder"/>
+        <part file="filterContent.html" hideClass=".filter.placeholder"/>
+        <part file="menuContent.html" hideClass=".menu.placeholder"/>
     </div>
 </body>
 </html>
