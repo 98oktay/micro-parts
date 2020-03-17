@@ -57,10 +57,21 @@ async function partResolver(part, res) {
         }
     } else if (type === "fragment") {
             await axios.get(`http://${gateway}/${fragment}`).then(({data})=>{
-                res.write && res.write(data.content);
-                if (hideClass) {
-                    res.write && res.write(`<style>${hideClass}{display:none}</style>`);
-                    res.write && res.write("\n");
+                if(res.write) {
+                    res.write(data.content);
+                    if (hideClass) {
+                        res.write(`<style>${hideClass}{display:none}</style>`);
+                    }
+                    if(data.styles) {
+                        data.styles.forEach((item)=>{
+                            res.write(`<link href="//${gateway}${item}" type="text/css" rel="stylesheet">`);
+                        })
+                    }
+                    if(data.scripts) {
+                        data.scripts.forEach((item)=>{
+                            res.write(`<script src="//${gateway}${item}"></script>`);
+                        })
+                    }
                 }
             });
     }
