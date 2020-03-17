@@ -46,7 +46,7 @@ async function partResolver(part, res) {
     if (type === "file") {
         const filePath = `parts/${$partDom.attr("file")}`;
 
-        await new Promise(_ => setTimeout(_, 1000 + Math.random() * 3000));
+        //await new Promise(_ => setTimeout(_, 1000 + Math.random() * 3000));
         if (fs.existsSync(filePath)) {
             const content = fs.readFileSync(filePath, 'utf8');
             if (hideClass) {
@@ -56,24 +56,24 @@ async function partResolver(part, res) {
             res.write && res.write(content);
         }
     } else if (type === "fragment") {
-            await axios.get(`http://${gateway}/${fragment}`).then(({data})=>{
-                if(res.write) {
-                    res.write(data.content);
-                    if (hideClass) {
-                        res.write(`<style>${hideClass}{display:none}</style>`);
-                    }
-                    if(data.styles) {
-                        data.styles.forEach((item)=>{
-                            res.write(`<link href="//${gateway}${item}" type="text/css" rel="stylesheet">`);
-                        })
-                    }
-                    if(data.scripts) {
-                        data.scripts.forEach((item)=>{
-                            res.write(`<script src="//${gateway}${item}"></script>`);
-                        })
-                    }
+        await axios.get(`http://${gateway}/${fragment}`).then(({data}) => {
+            if (res.write) {
+                res.write(data.content);
+                if (hideClass) {
+                    res.write(`<style>${hideClass}{display:none}</style>`);
                 }
-            });
+                if (data.styles) {
+                    data.styles.forEach((item) => {
+                        res.write(`<link href="//${gateway}${item}" type="text/css" rel="stylesheet">`);
+                    })
+                }
+                if (data.scripts) {
+                    data.scripts.forEach((item) => {
+                        res.write(`<script src="//${gateway}${item}"></script>`);
+                    })
+                }
+            }
+        });
     }
 
     return true;

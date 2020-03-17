@@ -7,7 +7,7 @@ export default class Header extends React.Component {
     };
 
     render() {
-        return <div>
+        return <div className="navbar navbar-dark bg-dark">
             <a className="app-logo" onClick={this.onClick} href="#">Header Component</a>
         </div>
     }

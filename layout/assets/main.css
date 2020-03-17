@@ -2,21 +2,21 @@ body {
     margin: 0;
     font-size: 12px;
   }
-  
+
       .filter {
           grid-area: filter;
           min-height: 200px;
       }
-  
+
       .sidebar2 {
           grid-area: sidebar2;
       }
-  
+
       .content {
           grid-area: content;
           min-height: 600px;
       }
-  
+
       .banner {
           grid-area: banner;
           padding: 0 !important;
@@ -36,12 +36,12 @@ body {
       .footer {
           grid-area: footer;
       }
-  
+
       .wrapper {
           background-color: #fff;
           color: #444;
       }
-  
+
     .wrapper {
       display: grid;
       margin: 0 auto;
@@ -56,7 +56,7 @@ body {
        "banner"
        "footer"
     }
-  
+
       @media only screen and (min-width: 600px)   {
           .wrapper {
               grid-gap: 1em;
@@ -68,21 +68,20 @@ body {
               ".filter content ."
               ".banner content ."
               ". . content ."
-              "footer footer footer footer";      
+              "footer footer footer footer";
           }
       }
-  
+
   .box {
     background-color: #444;
     color: #fff;
-    padding: 10px;
   }
-  
+
   .header,
   .footer {
     background-color: #999;
   }
-  
+
   .sidebar,
   .filter,
   .sidebar2 {
@@ -110,7 +109,7 @@ body {
   -webkit-background-size: 800px 104px;
   background-size: 1200px 104px;
   position: relative;
-    
+
   }
   @keyframes placeload {
     0% {

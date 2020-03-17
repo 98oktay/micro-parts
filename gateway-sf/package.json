@@ -8,14 +8,14 @@
     "dev": "nodemon index.js -e js,jsx"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@babel/register": "^7.8.6",
+    "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
-
+    "react-dom": "^16.13.0",
+    "serve-static": "^1.14.1"
   }
 }
